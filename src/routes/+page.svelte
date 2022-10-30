@@ -15,7 +15,9 @@
 	});
 </script>
 
-<div class="md:px-32 -mt-16 px-6 h-2/3 flex items-center justify-center overflow-hidden text-gray-100">
+<div
+	class="md:px-32 -mt-16 px-6 h-2/3 flex items-center justify-center overflow-hidden text-gray-100"
+>
 	<div class="mt-10">
 		<h1 class="text-center text-3xl font-bold">Welcome to Laron</h1>
 		<br />
@@ -49,7 +51,7 @@
 	<br />
 </div>
 <div class="flex justify-center px-6 md:px-32 py-4 text-gray-100">
-	<div class="backdrop-blur-sm rounded">
+	<div class="backdrop-blur-sm rounded px-2">
 		<div class="flex justify-center my-2">
 			<img class="w-14 md:w-28" src="/assets/ethereum.svg" alt="ethereum logo" />
 		</div>

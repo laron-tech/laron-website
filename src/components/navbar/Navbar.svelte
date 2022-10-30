@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="absolute w-screen p-2 flex justify-between items-center shadow-md backdrop-blur-sm"
+	class="fixed w-screen p-2 flex justify-between items-center shadow-md backdrop-blur-sm"
 	style="z-index: 3;"
 >
 	<a href="/" class="w-1/3 md:w-2/12">
