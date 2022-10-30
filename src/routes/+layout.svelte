@@ -73,10 +73,10 @@
 
 	/* global styles */
 	.laron-app.dark > :global(.laron-sidebar .sidebar-content) {
-		@apply bg-gray-900 bg-opacity-40 text-gray-100;
+		@apply bg-gray-900 text-gray-100;
 	}
 
 	.laron-app.light > :global(.laron-sidebar .sidebar-content) {
-		@apply bg-gray-100 bg-opacity-40 text-gray-900;
+		@apply bg-gray-100 text-gray-900;
 	}
 </style>

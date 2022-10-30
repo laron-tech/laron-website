@@ -15,7 +15,7 @@
 	});
 </script>
 
-<div class="md:px-32 -mt-16 px-6 h-2/3 flex items-center justify-center overflow-hidden">
+<div class="md:px-32 -mt-16 px-6 h-2/3 flex items-center justify-center overflow-hidden text-gray-100">
 	<div class="mt-10">
 		<h1 class="text-center text-3xl font-bold">Welcome to Laron</h1>
 		<br />
@@ -27,7 +27,7 @@
 		</p>
 	</div>
 </div>
-<div class="bg-blue-800 px-6 md:px-32 py-4">
+<div class="bg-blue-800 px-6 md:px-32 py-4 text-gray-100">
 	<div class="flex items-center justify-center">
 		<div class="w-1/3">
 			<LaronLogo />
@@ -48,7 +48,7 @@
 	<br />
 	<br />
 </div>
-<div class="flex justify-center px-6 md:px-32 py-4">
+<div class="flex justify-center px-6 md:px-32 py-4 text-gray-100">
 	<div class="backdrop-blur-sm rounded">
 		<div class="flex justify-center my-2">
 			<img class="w-14 md:w-28" src="/assets/ethereum.svg" alt="ethereum logo" />
@@ -67,7 +67,7 @@
 		<br />
 	</div>
 </div>
-<div id="team" class="bg-gray-900 px-6 md:px-32 py-4">
+<div id="team" class="bg-gray-900 px-6 md:px-32 py-4 text-gray-100">
 	<div class="flex items-center justify-center">
 		<div class="w-1/3">
 			<LaronLogo class="fill-indigo-700" />
