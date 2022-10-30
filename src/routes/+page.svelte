@@ -1,34 +1,22 @@
 <script lang="ts">
-	import * as THREE from 'three';
-	import GLOBE from 'vanta/dist/vanta.globe.min';
+	import TeamInfo from '$components/cards/TeamInfo.svelte';
 	import LaronLogo from '$components/images/LaronLogo.svelte';
+	import { teams, type User } from '$lib/const/teams';
+	import { onMount } from 'svelte';
 
-	let vanta = (node: HTMLElement) => {
-		if (node) {
-			GLOBE({
-				el: node,
-				THREE,
-				mouseControls: true,
-				touchControls: true,
-				gyroControls: false,
-				minHeight: 200.0,
-				minWidth: 200.0,
-				scale: 1.0,
-				scaleMobile: 1.0,
-				size: 1.5,
-				color: 0x2563eb,
-				color2: 0x5b21b6,
-				backgroundColor: 0x0
-			});
+	let users: User[] = [];
+
+	onMount(async () => {
+		for (const team of teams) {
+			const res = await fetch(`https://api.github.com/users/${team.github}`);
+			const data = await res.json();
+			users = [...users, data];
 		}
-	};
+	});
 </script>
 
-<div
-	use:vanta
-	class="relative z-0 md:px-32 -mt-16 px-6 h-2/3 flex items-center justify-center overflow-hidden"
->
-	<div>
+<div class="md:px-32 -mt-16 px-6 h-2/3 flex items-center justify-center overflow-hidden">
+	<div class="mt-10">
 		<h1 class="text-center text-3xl font-bold">Welcome to Laron</h1>
 		<br />
 		<p class="text-center">
@@ -39,7 +27,7 @@
 		</p>
 	</div>
 </div>
-<div class="bg-blue-800 border-t border-t-black px-6 md:px-32 py-4">
+<div class="bg-blue-800 px-6 md:px-32 py-4">
 	<div class="flex items-center justify-center">
 		<div class="w-1/3">
 			<LaronLogo />
@@ -54,9 +42,40 @@
 		<br />
 		The Team, Organization, and Project itself was not private, everyone can contribute to the project
 		and the team. Even if the project is open source, Laron has the
-		<a class="underline decoration-yellow-600 text-yellow-600" href="/teams">core teams</a>
+		<a class="underline decoration-yellow-600 text-yellow-600" href="#team">core team</a>
 		responsible for the project.
 	</p>
+	<br />
+	<br />
+</div>
+<div class="flex justify-center px-6 md:px-32 py-4">
+	<div class="backdrop-blur-sm rounded">
+		<div class="flex justify-center my-2">
+			<img class="w-14 md:w-28" src="/assets/ethereum.svg" alt="ethereum logo" />
+		</div>
+		<h1 class="title">What we do?</h1>
+		<br />
+		<p>
+			We are doing research and development that will help the community so that this technology can
+			be easier to use and reach a wider range of users.
+			<br />
+			<br />
+			Web3 is a new technology that is still in its infancy, and we are glad to be able to contribute
+			to the growth of this technology.
+		</p>
+		<br />
+		<br />
+	</div>
+</div>
+<div id="team" class="bg-gray-900 px-6 md:px-32 py-4">
+	<div class="flex items-center justify-center">
+		<div class="w-1/3">
+			<LaronLogo class="fill-indigo-700" />
+		</div>
+	</div>
+	<h1 class="title">Core team</h1>
+	<br />
+	<TeamInfo {teams} {users} />
 	<br />
 	<br />
 </div>
