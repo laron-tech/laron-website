@@ -29,7 +29,7 @@
 		}}
 	/>
 	<Sidebar active={isShowSidebar} />
-	<div class="h-screen w-screen overflow-auto pt-20 px-2">
+	<div class="h-screen w-screen overflow-auto pt-20">
 		<slot />
 	</div>
 </div>
