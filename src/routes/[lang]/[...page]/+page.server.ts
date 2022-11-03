@@ -6,7 +6,7 @@ import { error } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = ({ params }) => {
-  let path = `src/contents/${params.lang}/`;
+  let path = `contents/${params.lang}/`;
 
   if (params.page === '') {
     path += 'home/index.md'
