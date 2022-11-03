@@ -13,7 +13,6 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-node": "next",
 		"@sveltejs/kit": "next",
 		"@types/marked": "^4.0.7",
 		"@types/three": "^0.144.0",
