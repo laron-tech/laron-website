@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import vercel from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -6,15 +6,19 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: preprocess({
-    postcss: true,
-  }),
+		postcss: true,
+	}),
 
 	kit: {
-		adapter: adapter(),
-    alias: {
-      $components: 'src/components/',
-      $contents: 'src/contents/',
-    },
+		adapter: vercel({
+			edge: false,
+			external: [],
+			split: false,
+		}),
+		alias: {
+			$components: 'src/components/',
+			$contents: 'src/contents/',
+		},
 	}
 };
 
