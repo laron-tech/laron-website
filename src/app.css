@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 .font-space {
-  font-family: 'Space Mono', monospace;
+	font-family: 'Space Mono', monospace;
 }
 
 body {
-  @apply font-space;
+	@apply font-space;
 }

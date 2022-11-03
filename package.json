@@ -5,7 +5,6 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"build:vercel": "vite build && cp -r contents/ .vercel/output/functions/contents.func/",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -14,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-vercel": "next",
+		"@sveltejs/adapter-netlify": "1.0.0-next.83",
 		"@sveltejs/kit": "next",
 		"@types/marked": "^4.0.7",
 		"@types/three": "^0.144.0",

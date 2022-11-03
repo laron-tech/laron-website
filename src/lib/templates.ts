@@ -1,13 +1,13 @@
 export enum Template {
-  home,
-  none,
+	home,
+	none
 }
 
 export function getTemplate(page: string): Template {
-  switch (page) {
-    case "":
-      return Template.home;
-    default:
-      return Template.none;
-  }
+	switch (page) {
+		case '':
+			return Template.home;
+		default:
+			return Template.none;
+	}
 }
