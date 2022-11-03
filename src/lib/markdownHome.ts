@@ -35,7 +35,6 @@ export function parseHome(markdown: string): string {
 
   let tokens = marked.lexer(markdown);
   marked.walkTokens(tokens, (token) => {
-    console.log(token.type);
     switch (token.type) {
       case 'heading':
         parseHeading(token);

@@ -1,9 +1,9 @@
 import type { LayoutServerLoad } from './$types';
 import { redirect } from '@sveltejs/kit';
-import { readDir } from '$lib/utils';
 
-export const load: LayoutServerLoad = async ({ params }) => {
-  let langs: string[] = readDir('src/contents');
+export const load: LayoutServerLoad = async ({ fetch, params }) => {
+  let res = await fetch('/contents?list');
+  let langs: string[] = await res.json();
   if (!langs.includes(params.lang)) {
     throw redirect(302, `/en/${params.lang}/${params.page}`);
   }
