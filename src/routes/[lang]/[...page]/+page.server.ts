@@ -9,6 +9,8 @@ export const load: PageServerLoad = async ({ fetch, params, url }) => {
 
 	if (params.page === '') {
 		path += 'home/index.md';
+	} else if (params.page.startsWith('404')) {
+		throw error(404, 'Not found');
 	} else {
 		path += params.page + '/index.md';
 	}

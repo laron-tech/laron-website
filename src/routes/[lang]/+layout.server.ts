@@ -12,9 +12,9 @@ export const load: LayoutServerLoad = async ({ fetch, params, request }) => {
 	let supportedLanguages: string[] = await res.json();
 	if (!supportedLanguages.includes(params.lang)) {
 		if (supportedLanguages.includes(requestLanguage)) {
-			return redirect(302, `/${requestLanguage}/${params.page}`);
+			throw redirect(302, `/${requestLanguage}/${params.lang}/${params.page}`);
 		}
-		return redirect(302, `/${supportedLanguages[0]}/${params.page}`);
+		throw redirect(302, `/${supportedLanguages[0]}/${params.lang}/${params.page}`);
 	}
 
 	return { lang: params.lang };
