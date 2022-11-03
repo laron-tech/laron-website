@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	export let content: string;
 	import * as THREE from 'three';
 	import GLOBE from 'vanta/dist/vanta.globe.min';
@@ -21,6 +23,12 @@
 			});
 		}
 	};
+
+	onMount(() => {
+		import('$lib/github/renderTeams').then(({ renderTeams }) => {
+			renderTeams();
+		});
+	});
 </script>
 
 <div class="home-section text-gray-100">
@@ -35,7 +43,7 @@
 	}
 
 	:global(.section) {
-		@apply h-screen w-screen flex justify-center items-center;
+		@apply min-h-screen w-screen flex justify-center items-center;
 	}
 
 	/* give background to every child that is multiple of two, eg: child 2, child 4 */
@@ -44,7 +52,11 @@
 	}
 
 	:global(.inner) {
-		@apply w-4/6 md:w-1/3;
+		@apply w-4/6 md:w-1/3 py-8;
+	}
+
+	:global(#core-team .inner) {
+		@apply w-5/6 md:w-1/3 py-8;
 	}
 
 	:global(.section-1 p) {

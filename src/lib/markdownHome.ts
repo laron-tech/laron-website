@@ -24,6 +24,10 @@ export function parseHome(markdown: string): string {
 	let parseParagraph = (token: marked.Tokens.Paragraph) => {
 		result += '<p>';
 		let text = token.text;
+		let image = text.match(/\!\[(.*?)\]\((.*?)\)/);
+		if (image) {
+			text = text.replace(/\!\[(.*?)\]\((.*?)\)/, '');
+		}
 		let link = text.match(/\[(.*?)\]\((.*?)\)/);
 		if (link) {
 			text = text.replace(
@@ -35,9 +39,16 @@ export function parseHome(markdown: string): string {
 		result += '</p>\n';
 	};
 
+	let parseImage = (token: marked.Tokens.Image) => {
+		result += `<div class="flex justify-center"><img src="${token.href}" alt="${token.text}" width="50%" /></div>\n`;
+	}
+
 	let tokens = marked.lexer(markdown);
 	marked.walkTokens(tokens, (token) => {
 		switch (token.type) {
+			case 'image':
+				parseImage(token);
+				break;
 			case 'heading':
 				parseHeading(token);
 				break;
