@@ -4,10 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	font-family: 'Space Mono', monospace;
+.font-space {
+  font-family: 'Space Mono', monospace;
 }
 
-a {
-	@apply text-blue-500;
+body {
+  @apply font-space;
 }
