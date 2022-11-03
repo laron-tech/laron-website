@@ -2,6 +2,7 @@
 title: Home
 description: Laron is an open source project that focused on the building ecosystem on the top of the Web3 technologies.
 ---
+
 # Welcome to Laron
 
 Laron is an open source project that focused on the building ecosystem on the top of the [Web3 technologies](https://ethereum.org/en/web3/).

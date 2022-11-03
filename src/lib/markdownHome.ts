@@ -41,7 +41,7 @@ export function parseHome(markdown: string): string {
 
 	let parseImage = (token: marked.Tokens.Image) => {
 		result += `<div class="flex justify-center"><img src="${token.href}" alt="${token.text}" width="50%" /></div>\n`;
-	}
+	};
 
 	let tokens = marked.lexer(markdown);
 	marked.walkTokens(tokens, (token) => {

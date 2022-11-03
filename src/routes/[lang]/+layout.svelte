@@ -1,9 +1,6 @@
 <script lang="ts">
-	import type { LayoutData } from './$types';
-	import '../../app.css';
+	import '../../app.scss';
 	import Navbar from '$components/layouts/Navbar.svelte';
-
-	export let data: LayoutData;
 </script>
 
 <div class="relative">

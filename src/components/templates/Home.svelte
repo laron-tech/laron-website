@@ -36,38 +36,37 @@
 </div>
 <div class="scene w-screen h-screen fixed" use:vanta />
 
-<style>
+<style lang="scss" global>
 	.scene {
 		top: 0;
 		z-index: -1;
 	}
 
-	:global(.section) {
-		@apply min-h-screen w-screen flex justify-center items-center;
-	}
+	.section {
+		@apply min-h-screen w-screen flex justify-center items-center text-center;
 
-	/* give background to every child that is multiple of two, eg: child 2, child 4 */
-	:global(.section:nth-child(odd)) {
-		@apply bg-gray-900;
-	}
+		&:nth-child(odd) {
+			@apply bg-gray-900;
+		}
 
-	:global(.inner) {
-		@apply w-4/6 md:w-1/3 py-8;
-	}
+		.inner {
+			@apply w-4/6 md:w-1/3 py-8;
+		}
 
-	:global(#core-team .inner) {
-		@apply w-5/6 md:w-1/3 py-8;
-	}
+		&#core-team .inner {
+			@apply w-5/6;
+		}
 
-	:global(.section-1 p) {
-		@apply text-center text-xl;
-	}
+		&.section-1 p {
+			@apply text-xl;
+		}
 
-	:global(.section h1) {
-		@apply text-4xl font-bold text-center;
-	}
+		h1 {
+			@apply text-4xl font-bold;
+		}
 
-	:global(.section h2) {
-		@apply text-2xl font-bold text-center;
+		h2 {
+			@apply text-2xl font-bold;
+		}
 	}
 </style>
