@@ -1,4 +1,4 @@
-import vercel from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,11 +10,7 @@ const config = {
 	}),
 
 	kit: {
-		adapter: vercel({
-			edge: true,
-			external: [],
-			split: false,
-		}),
+		adapter: adapter(),
 		alias: {
 			$components: 'src/components/',
 			$contents: 'src/contents/',
