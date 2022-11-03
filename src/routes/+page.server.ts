@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({ fetch, request }) => {
 	let res = await fetch('/contents?list=true');
 	let supportedLanguages: string[] = await res.json();
 	if (supportedLanguages.includes(requestLanguage)) {
-		return redirect(302, `/${requestLanguage}/`);
+		throw redirect(302, `/${requestLanguage}/`);
 	}
-	return redirect(302, `/${supportedLanguages[0]}/`);
+	throw redirect(302, `/${supportedLanguages[0]}/`);
 };
