@@ -4,7 +4,7 @@ import { getTemplate } from '$lib/templates';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ fetch, params }) => {
+export const load: PageServerLoad = async ({ fetch, params, url }) => {
 	let path = `/contents/?path=${params.lang}/`;
 
 	if (params.page === '') {
@@ -33,6 +33,7 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 	};
 
 	return {
+		url: url.toString(),
 		page: page(),
 		title: metadata.title,
 		description: metadata.description,
