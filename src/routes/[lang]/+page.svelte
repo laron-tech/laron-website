@@ -26,7 +26,7 @@
 			}
 
 			contents.forEach((content) => {
-				content.style.opacity = `${1 - offset / 200}`;
+				content.style.opacity = `${offset}`;
 			});
 
 			let scale = 1 + offset / 500;
