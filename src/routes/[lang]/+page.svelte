@@ -7,7 +7,6 @@
 	export let data: PageData;
 
 	let scrollY = 0;
-	let os = 0;
 
 	function parallax(el: HTMLElement) {
 		let top = el.offsetTop;
@@ -18,7 +17,6 @@
 		window.addEventListener('scroll', () => {
 			scrollY = window.scrollY;
 			let offset = scrollY - top;
-			os = offset;
 			title.style.transform = `translateY(${offset * 1.5}px)`;
 			title.style.opacity = `${1 - offset / 200}`;
 			if (offset > -50 && offset < 50) {
@@ -28,7 +26,9 @@
 			}
 
 			contents.forEach((content) => {
-				content.style.opacity = `${1 - offset / 200}`;
+				let cTop = content.offsetTop;
+				let cOffset = top + cTop - 50 - scrollY;
+				content.style.opacity = `${1 - cOffset / 200}`;
 			});
 
 			let scale = 1 + offset / 500;
@@ -68,7 +68,7 @@
 
 <svelte:head>
 	<!-- Primary Meta Tags -->
-	<title>{os}</title>
+	<title>{title}</title>
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 
