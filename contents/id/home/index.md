@@ -3,9 +3,9 @@ title: Beranda
 description: Laron adalah proyek sumber terbuka yang berfokus pada pembangunan ekosistem di atas teknologi Web3.
 ---
 
-# Selamat datang di Laron
+# Proyek Laron
 
-Laron adalah proyek sumber terbuka yang berfokus pada pembangunan ekosistem di atas [Teknologi Web3](https://ethereum.org/en/web3/).
+Platform digital yang ter-desentralisasi.
 
 ## Apa itu Laron?
 

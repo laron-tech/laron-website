@@ -1,0 +1,50 @@
+.home {
+  .section {
+    @apply relative flex flex-col justify-center w-screen min-h-screen overflow-hidden;
+
+    .inner {
+      @apply px-12 z-10;
+
+      h1 {
+        @apply text-5xl font-bold;
+      }
+
+      h2 {
+        @apply relative text-4xl font-bold my-8;
+
+        &::before {
+          @apply absolute h-1 bg-gradient-to-r from-red-600 to-blue-500;
+          max-width: 30%;
+          width: 0;
+          content: '';
+          top: 0;
+          left: 0;
+          transition: width 0.5s ease;
+        }
+
+        &.active::before {
+          @apply w-full;
+        }
+      }
+
+      p {
+        @apply text-xl;
+      }
+    }
+
+    &:nth-child(odd) {
+      @apply bg-black text-gray-100;
+    }
+
+    .img-container {
+      @apply flex justify-center items-center;
+      img {
+        width: 150px;
+      }
+    }
+
+    &:not(:nth-child(1)) {
+      @apply block;
+    }
+  }
+}
