@@ -11,6 +11,7 @@ export enum Tag {
   Div = "div",
   Img = "img",
   Br = "br",
+  Span = "span",
 }
 
 function parseTag(tag: string): Tag {
@@ -37,6 +38,8 @@ function parseTag(tag: string): Tag {
       return Tag.Img;
     case "br":
       return Tag.Br;
+    case "span":
+      return Tag.Span;
     default:
       return Tag.Text;
   }
@@ -114,6 +117,10 @@ export class Element {
     return new Element(Tag.Br);
   }
 
+  public static span(): Element {
+    return new Element(Tag.Span);
+  }
+
   public isHeading(): boolean {
     return this.tag === Tag.H1 ||
       this.tag === Tag.H2 ||
@@ -129,6 +136,18 @@ export class Element {
 
   public getId(): string | undefined {
     return this.id;
+  }
+
+  public getText(): string {
+    if (this.tag === Tag.Text) {
+      return this.text || "";
+    } else {
+      let res = "";
+      for (let child of this.children) {
+        res += child.getText();
+      }
+      return res;
+    }
   }
 
   public render(): string {

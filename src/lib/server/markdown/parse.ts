@@ -29,9 +29,10 @@ export function parseMarkdown(src: string): Element[] {
       let div = Element.div();
       div.addClass("section");
       let id = el.getId();
+      div.addAttribute("data-title", el.getText());
       if (id) {
-        let title = id.replace(/-/g, " ").replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
-        div.addAttribute("data-title", title);
+        div.setID(id);
+        el.setID(id + '-inner');
       }
       let innerDiv = Element.div();
       innerDiv.addClass("inner");
@@ -66,6 +67,8 @@ function parse(token: marked.Token): Element {
     case "br":
     case "space":
       return Element.br();
+    case "html":
+      return parseHTML(token as marked.Tokens.HTML);
     default:
       return Element.text("");
   }
@@ -117,4 +120,8 @@ function parseImage(token: marked.Tokens.Image): Element {
   let img = Element.image(token.href, token.text);
   div.appendChild(img);
   return div;
+}
+
+function parseHTML(token: marked.Tokens.HTML): Element {
+  return Element.text(token.raw);
 }

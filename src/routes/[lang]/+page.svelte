@@ -34,6 +34,33 @@
 		});
 	}
 
+	function renderMembers(): void {
+		let container = document.getElementById('core-team');
+		let cardContainer = document.createElement('div');
+		cardContainer.classList.add('card-container');
+		for (let person of data.members) {
+			let card = document.createElement('div');
+			let about = document.createElement('div');
+			let photo = document.createElement('img');
+			let name = document.createElement('h3');
+			let url = document.createElement('a');
+			photo.src = person.avatar_url;
+			photo.alt = person.name || person.login;
+			name.innerText = person.name || person.login;
+			url.href = person.url;
+			url.target = '_blank';
+			url.innerText = person.url;
+			card.classList.add('card');
+			card.appendChild(photo);
+			about.classList.add('about');
+			about.appendChild(name);
+			about.appendChild(url);
+			card.appendChild(about);
+			cardContainer.appendChild(card);
+		}
+		container?.appendChild(cardContainer);
+	}
+
 	onMount(() => {
 		let sections = document.querySelectorAll('.section');
 		let orbit = document.getElementById('laron-orbits');
@@ -57,6 +84,8 @@
 			p.style.scale = `${1 + scrollY / 200}`;
 			p.style.opacity = `${1 - scrollY / 200}`;
 		});
+
+		renderMembers();
 	});
 
 	$: content = data.content;

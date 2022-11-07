@@ -14,10 +14,10 @@
 
         &::before {
           @apply absolute h-1 bg-gradient-to-r from-red-600 to-blue-500;
-          max-width: 30%;
+          max-width: 100%;
           width: 0;
           content: '';
-          top: 0;
+          bottom: 0;
           left: 0;
           transition: width 0.5s ease;
         }
@@ -29,6 +29,14 @@
 
       p {
         @apply text-xl;
+      }
+
+      a {
+        @apply text-red-600 underline decoration-red-600;
+      }
+
+      span {
+        @apply bg-red-600 text-gray-100;
       }
     }
 
@@ -43,8 +51,41 @@
       }
     }
 
+    &:nth-child(1) {
+      h1 {
+        @apply mb-4;
+      }
+      p {
+        @apply bg-red-600 inline;
+      }
+    }
+
     &:not(:nth-child(1)) {
       @apply block;
+    }
+  }
+
+  #core-team .card-container {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 w-full;
+      .card {
+      @apply flex flex-row w-full items-center mt-8;
+      img {
+        width: 30%;
+      }
+
+      .about {
+        @apply relative;
+        width: 70%;
+        word-wrap: break-word;
+      }
+
+      h3 {
+        @apply text-2xl font-bold;
+      }
+
+      a {
+        @apply text-gray-100 inline bg-red-600;
+      }
     }
   }
 }

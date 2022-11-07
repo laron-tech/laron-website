@@ -11,16 +11,16 @@ Platform digital yang ter-desentralisasi.
 
 ![laron](/laron.svg)
 
-Laron sendiri adalah nama proyek yang kami bangun di atas Web3 dan kami suguhkan ke komunitas.
+Laron adalah sebuah proyek sumber terbuka yang berfokus dalam pengembangan <span>Platform</span> dan <span>Ekosistem</span> diatas teknologi [Web3](https://ethereum.org/en/web3/).
 
-Proyek ini sendiri sepenuhnya terbuka sehingga setiap orang dapat berkontribusi pada proyek tersebut. Walaupun begitu, kami memiliki [team inti](#core-team) yang bertanggung jawab terhadap proyek yang kami jalankan.
+Proyek ini bertujuan untuk menghadirkan pengalaman yang lebih baik dalam penggunaan teknologi <span>web3</span>. Dengan harapan kami dapat membantu perkembangan dari teknologi ini, dan menjangkau pengguna yang lebih luas.
 
-## Apa yang kami lakukan?
+Dengan adanya <span>web3</span>, teknologi [Blokchain]() sekarang dapat di aplikasikan kedalam banyak hal, Seperti banyaknya [Aplikasi ter-desentralisasi(dapp)](https://ethereum.org/id/dapps/#what-are-dapps) yang sudah berjalan.
 
-![smart-contracts](/smart-contracts.png)
+## Apa yang kami kerjakan?
 
-Kami melakukan penelitian dan pengembangan yang dapat membantu komunitas agar teknologi ini dapat lebih mudah digunakan dan menjangkau pengguna yang lebih luas.
+Kami melakukan penelitian dan pengembangan beberapa <span>dapp</span> yang akan menjadi unit dalam platform kami.
 
-Web3 adalah teknologi baru yang masih dalam masa pertumbuhan, dan kami senang dapat berkontribusi pada pertumbuhan teknologi ini.
+Selain pengalaman yang lebih baik, kami juga memprioritaskan keamanan dalam pengembangan proyek ini. Proyek Laron sepenuh nya terbuka untuk semua orang, sehingga siapapun dapat [berkontribusi](https://github.com/laron-tech) terhadap proyek ini.
 
 ## Tim inti {#core-team}
