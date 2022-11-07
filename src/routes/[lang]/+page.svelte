@@ -26,9 +26,7 @@
 			}
 
 			contents.forEach((content) => {
-				let cTop = content.offsetTop;
-				let cOffset = top + cTop - 50 - scrollY;
-				content.style.opacity = `${1 - cOffset / 200}`;
+				content.style.opacity = `${1 - offset / 200}`;
 			});
 
 			let scale = 1 + offset / 500;
