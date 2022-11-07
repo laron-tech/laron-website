@@ -54,12 +54,9 @@
 		</g>
 	</g>
 	<g id="ethereum-logo" transform="translate(100, 92)">
-		<path d="M 100 90 L 90 110 L 100 115 Z" fill="#FF0000" />
-		<path d="M 100 90 L 100 115 L 110 110 Z" fill="#00FF00" />
-		<path d="M 100 105 L 90 110 L 100 115 Z" fill="#0000FF" />
-		<path d="M 100 105 L 100 115 L 110 110 Z" fill="#0000AE" />
-		<path d="M 90 112 L 100 127 L 100 117 Z" fill="#FF0000" />
-		<path d="M 100 117 L 100 127 L 110 112 Z" fill="#00FF00" />
+		<path d="M 100 90 L 90 110 L 100 115 L 110 110 Z" style="fill: url(#gradient-1);" />
+		<path d="M 100 105 L 90 110 L 100 115 L 110 110 Z" style="fill: url(#gradient-2);" />
+		<path d="M 90 112 L 100 127 L 110 112 L 100 117 Z" style="fill: url(#gradient-1);" />
 	</g>
 </svg>
 
@@ -82,7 +79,7 @@
 		height: 100%;
 		position: absolute;
 		overflow: visible;
-		z-index: 1;
+		z-index: 0;
 	}
 
 	.orbit {

@@ -3,6 +3,7 @@
 	import type { PageData } from './$types';
 	import Orbit from '$components/svg/Orbit.svelte';
 	import { onMount } from 'svelte';
+	import DropArrow from '$components/svg/DropArrow.svelte';
 
 	export let data: PageData;
 
@@ -64,7 +65,9 @@
 	onMount(() => {
 		let sections = document.querySelectorAll('.section');
 		let orbit = document.getElementById('laron-orbits');
+		let dropArrow = document.getElementById('drop-arrow');
 		sections[0].appendChild(orbit!);
+		sections[0].appendChild(dropArrow!);
 		let h1 = sections[0].querySelector('h1')!;
 		let p = sections[0].querySelector('p')!;
 
@@ -115,6 +118,7 @@
 </svelte:head>
 
 <Orbit />
+<DropArrow />
 <div class="home relative">
 	{@html content}
 </div>
